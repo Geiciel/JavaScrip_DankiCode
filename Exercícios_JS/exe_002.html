@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        .block {
+            width: 230px;
+            margin-top: 300px;
+            justify-items: center;
+        }
+
+        .display {
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        .display > select {
+            width: 100%;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+        <label for="number">Digite um número e veja a sua multiplicação:</label>
+       <input type="number" name="nuber" id="number">
+       <button type="button" id="button" onclick="verificar()">Veriifcar</button> 
+       <div class="display">
+            <select name="select" id="select" size="11"></select>
+       </div>
+    </div>
+    <script>
+        const input = document.getElementById('number')
+        const button = document.getElementById('button')
+        const select = document.getElementById('select')
+
+        function verificar(){
+            select.innerHTML = ''
+            for(let i = 0; i <= 10; i++){
+                let option = document.createElement('option')
+                option.innerText = `${Number(input.value)} X ${i} = ${Number(input.value) * i}`
+                select.appendChild(option)
+            }
+        }
+    </script>
+</body>
+</html> 
