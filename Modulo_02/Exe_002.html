@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let anoNascido = prompt('Em que ano você naceu?')
+        let dataAtual = new Date()
+        let anoAtual = dataAtual.getFullYear()
+
+        if (anoNascido.length == 4 && !isNaN(anoNascido)){
+            let idade = anoAtual - Number(anoNascido)
+            alert(`você tem ${idade} anos de idade!`)
+            if (idade >= 18){
+                alert('Boa sorte na vida meu parceiro, as coisas estão difíceis')
+            } else {
+                let falta = 18 - idade
+                alert(`aproveite enquanto tem tempo, porque daqui ${falta} anos pra fazer 18 anos`)
+            }
+        } else {
+            alert('Por gentileza, coloque o ano ou verifique se esta so com 4 digitos. Ex: 2025')
+        }
+    </script>
+</body>
+</html>
